@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {Root, Main} from "../pages";
+import { Root, BackfeedBreaker, Home } from "../pages";
 
 export default function AppRouter() {
   const router = createBrowserRouter([
@@ -8,15 +8,14 @@ export default function AppRouter() {
       children: [
         {
           path: "/",
-          element: <Main />,
-        }
+          element: <Home />,
+        },
+        {
+          path: "/backfeed",
+          element: <BackfeedBreaker />,
+        },
       ],
     },
   ]);
-  return (
-    <RouterProvider
-      router={router}
-      // fallbackElement={<BigSpinner />}
-    />
-  )
+  return <RouterProvider router={router} />;
 }
